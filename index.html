@@ -3,46 +3,100 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Slider Theme - Jssor Slider, Carousel, Slideshow with Javascript Source Code</title>
+    <title>SCI - Facebook Tab - July 2015 Deck</title>
 </head>
 <body style="font-family:Arial, Verdana;background-color:#fff;">
     <!-- Caption Style -->
     <style> 
-        .captionOrange, .captionBlack
-        {
-            color: #fff;
-            font-size: 20px;
-            line-height: 30px;
-            text-align: center;
-            border-radius: 4px;
+
+        .jssort03 {
+            position: absolute;
+            /* size of thumbnail navigator container */
+            width: 810px;
+            height: 60px;
         }
-        .captionOrange
-        {
-            background: #EB5100;
-            background-color: rgba(235, 81, 0, 0.6);
-        }
-        .captionBlack
-        {
-        	font-size:16px;
-            background: #000;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-        a.captionOrange, A.captionOrange:active, A.captionOrange:visited
-        {
-        	color: #ffffff;
-        	text-decoration: none;
-        }
-        a.captionOrange:hover
-        {
-            color: #eb5100;
-            text-decoration: underline;
-            background-color: #eeeeee;
-            background-color: rgba(238, 238, 238, 0.7);
-        }
-        .bricon
-        {
-            background: url(img/browser-icons.png);
-        }
+
+            .jssort03 .p {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 90px;
+                height: 32px;
+                cursor: pointer;
+            }
+
+            .jssort03 .t {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+
+            .jssort03 .w, .jssort03 .pav:hover .w {
+                position: absolute;
+                width: 60px;
+                height: 30px;
+                box-sizing: content-box;
+                filter: gray; /* IE6-9 */
+                filter: grayscale(1); /* Firefox 35+ */
+                -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+            }
+
+            .jssort03 .pdn .w, .jssort03 .pav .w {
+                border: 1px solid #FFF;
+                border-radius: 3px;
+                filter: none; /* IE6-9 */
+                filter: grayscale(0); /* Firefox 35+ */
+                -webkit-filter: grayscale(0); /* Google Chrome, Safari 6+ & Opera 15+ */
+            }
+
+            .jssort03 .c {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 62px;
+                height: 32px;
+/*                background-color: #000;
+                filter: alpha(opacity=45);
+                opacity: .45;
+*/                transition: opacity .6s;
+                -moz-transition: opacity .6s;
+                -webkit-transition: opacity .6s;
+                -o-transition: opacity .6s;
+            }
+
+            .jssort03 .p:hover .c, .jssort03 .pav .c {
+                filter: alpha(opacity=0);
+                opacity: 0;
+            }
+
+            .jssort03 .p:hover .c {
+                transition: none;
+                -moz-transition: none;
+                -webkit-transition: none;
+                -o-transition: none;
+            }
+
+            * html .jssort03 .w {
+                width /**/: 62px;
+                height /**/: 32px;
+            }
+
+            /* Temporary FB background */
+            body {
+              background: url("images/fb-bg.jpg") no-repeat 50% 0 !important;
+              margin: 0;
+            }
+
+            .position-gallery {
+                top: 80px !important;
+                padding: 0 290px;
+                width: 850px !important;
+                margin: 0 auto;
+            }
+
     </style>
     <!-- it works the same with all jquery version from 1.x to 2.x -->
     <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
@@ -54,7 +108,7 @@
 
         jQuery(document).ready(function ($) {
             var options = {
-                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlay: false,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
                 $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
                 $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
                 $PauseOnHover: 1,                               //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
@@ -118,7 +172,7 @@
 
         <!-- Loading Screen -->
         <div u="loading" style="position: absolute; top: 0px; left: 0px;">
-            <div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
+            <div style="filter: alpha(opacity=90); opacity:0.9; position: absolute; display: block;
                 background-color: #000000; top: 0px; left: 0px;width: 100%;height:100%;">
             </div>
             <div style="position: absolute; display: block; background: url(img/loading.gif) no-repeat center center;
@@ -130,35 +184,35 @@
         <div u="slides" style="cursor: move; position: absolute; left: auto; top: 0px; width: 810px; height: 600px; overflow: hidden;">
             <div>
                 <img u="image" src="images/FBTabs-1.png" />
-                <img u="thumb" src="images/FBTabs-1.png" />
+                <img u="thumb" src="images/FBTabs-Thumb-1.png" />
             </div>
             <div>
                 <img u="image" src="images/FBTabs-2.png" />
-                <img u="thumb" src="images/FBTabs-2.png" />
+                <img u="thumb" src="images/FBTabs-Thumb-2.png" />
             </div>
             <div>
                 <img u="image" src="images/FBTabs-3.png" />
-                <img u="thumb" src="images/FBTabs-3.png" />
+                <img u="thumb" src="images/FBTabs-Thumb-3.png" />
             </div>
             <div>
                 <img u="image" src="images/FBTabs-4.png" />
-                <img u="thumb" src="images/FBTabs-4.png" />
+                <img u="thumb" src="images/FBTabs-Thumb-4.png" />
             </div>
             <div>
                 <img u="image" src="images/FBTabs-5.png" />
-                <img u="thumb" src="images/FBTabs-5.png" />
+                <img u="thumb" src="images/FBTabs-Thumb-5.png" />
             </div>
             <div>
                 <img u="image" src="images/FBTabs-6.png" />
-                <img u="thumb" src="images/FBTabs-6.png" />
+                <img u="thumb" src="images/FBTabs-Thumb-6.png" />
             </div>
             <div>
                 <img u="image" src="images/FBTabs-7.png" />
-                <img u="thumb" src="images/FBTabs-7.png" />
+                <img u="thumb" src="images/FBTabs-Thumb-7.png" />
             </div>          
             <div>
                 <img u="image" src="images/FBTabs-8.png" />
-                <img u="thumb" src="images/FBTabs-8.png" />
+                <img u="thumb" src="images/FBTabs-Thumb-8.png" />
             </div>
         </div>
         
@@ -200,103 +254,12 @@
  -->        <!--#endregion Arrow Navigator Skin End -->
         <!--#region Thumbnail Navigator Skin Begin -->
         <!-- Help: http://www.jssor.com/development/slider-with-thumbnail-navigator-jquery.html -->
-        <style>
-            /* jssor slider thumbnail navigator skin 03 css */
-            /*
-            .jssort03 .p            (normal)
-            .jssort03 .p:hover      (normal mouseover)
-            .jssort03 .pav          (active)
-            .jssort03 .pdn          (mousedown)
-            */
-
-            .jssort03 {
-                position: absolute;
-                /* size of thumbnail navigator container */
-                width: 810px;
-                height: 60px;
-            }
-
-                .jssort03 .p {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 62px;
-                    height: 32px;
-                }
-
-                .jssort03 .t {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    border: none;
-                }
-
-                .jssort03 .w, .jssort03 .pav:hover .w {
-                    position: absolute;
-                    width: 60px;
-                    height: 30px;
-                    border: #ffba22 1px solid;
-                    box-sizing: content-box;
-                }
-
-                .jssort03 .pdn .w, .jssort03 .pav .w {
-                    border-style: solid;
-                }
-
-                .jssort03 .c {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 62px;
-                    height: 32px;
-                    background-color: #000;
-                    filter: alpha(opacity=45);
-                    opacity: .45;
-                    transition: opacity .6s;
-                    -moz-transition: opacity .6s;
-                    -webkit-transition: opacity .6s;
-                    -o-transition: opacity .6s;
-                }
-
-                .jssort03 .p:hover .c, .jssort03 .pav .c {
-                    filter: alpha(opacity=0);
-                    opacity: 0;
-                }
-
-                .jssort03 .p:hover .c {
-                    transition: none;
-                    -moz-transition: none;
-                    -webkit-transition: none;
-                    -o-transition: none;
-                }
-
-                * html .jssort03 .w {
-                    width /**/: 62px;
-                    height /**/: 32px;
-                }
-
-				/* Temporary FB background */
-				body {
-				  background: url("images/fb-bg.jpg") no-repeat 50% 0 !important;
-				  margin: 0;
-				}
-
-				.position-gallery {
-					top: 80px !important;
-					padding: 0 290px;
-					width: 850px !important;
-					margin: 0 auto;
-				}
-
-        </style>
 
         <!-- thumbnail navigator container -->
         <div u="thumbnavigator" class="jssort03" style="left: auto; bottom: 80px;">
 
             <!-- the following background element is optional -->
-            <div style=" background-color: #000; filter:alpha(opacity=30); opacity:.3; width: 100%; height:100%;"></div>
+            <div style=" background-color: #000; filter:alpha(opacity=70); opacity:.7; width: 100%; height:100%;"></div>
 
             <!-- Thumbnail Item Skin Begin -->
             <div u="slides" style="cursor: default;">
